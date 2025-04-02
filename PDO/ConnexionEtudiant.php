@@ -21,16 +21,17 @@
         $_SESSION['password'] = $session[3];
         $_SESSION['telephone'] = $session[4];
         $_SESSION['date'] = $session[5];
+        $_SESSION['log'] = 'Etudiant';
 
         echo "Bonjour " . $_SESSION['firstname'] . " " . $_SESSION['name'] . ", vous êtes connecté en tant qu'étudiant."; echo "<br>";
         echo "Votre telephone est : " . $_SESSION['telephone'] . "<br>";
     
         // Redirection vers la page d'accueil
-        header("Location: accueil.html?login=success");
+        header("Location: ../Vue/accueil.html?login=success");
         exit();
     } else {
         // Authentification échouée
         session_destroy(); // Détruire la session en cas d'échec
-        header("Location: connexion-etu.html?login=failed");
+        header("Location: ../Vue/connexion-etu.html?login=failed");
     }
 ?>

@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Pagination des entreprises</title>
-        <link rel="stylesheet" href="page_css.css">
+        <link rel="stylesheet" href="assets/page.css">
     </head>
     <body class="body_Page_de_recherche">
 
@@ -24,7 +24,7 @@
   </form>
 
   <?php
-    include("afficheEntreprise.php");
+    include("../PDO/afficheOffre.php");
   ?>
 
 <script src="java.js"></script>

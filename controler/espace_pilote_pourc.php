@@ -1,5 +1,5 @@
 <?php
-include("Count.php");
+include("../PDO/Count.php");
 
 // Prepare the data for the chart
 $dataSets = [

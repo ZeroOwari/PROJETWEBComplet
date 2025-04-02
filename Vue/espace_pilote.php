@@ -1,11 +1,10 @@
-<?php include ("Pilote.php"); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web4ALL espace pilote</title>
-    <link rel="stylesheet" href="style-web.css">
+    <link rel="stylesheet" href="assets/style-web.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="body">
@@ -41,43 +40,15 @@
 <div class="containerpilote">
     <div class="sidebar">
         <div class="tuteur">
-            <img src="profil.png" alt="Tuteur">
-            <h2 class="titre-connexion-purple">Tuteur</h2>
+            <img src="assetd/profil.png" alt="Tuteur">
+            <h2 class="titre-connexion-purple">Pilote</h2>
         </div>
 
         <div class="promo">
-            <?php
-                $db = new Pilote('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');    
-                $promos = json_decode($db->getAllPromotions());
-
-                if (is_array($promos)) {
-                    foreach ($promos as $promo) {
-                        echo '<div class="promo-item">';
-                        echo '<button class="toggle-btn">';
-                        echo htmlspecialchars($promo->{"Nom-promo"});
-                        echo '<span>➕</span></button>';
-                        echo '<ul class="eleve-list">';
-
-                        $students = json_decode($db->getStudentByPromo($promo->{"ID-promo"}));
-
-                        if (is_array($students) && !empty($students)) {
-                            foreach ($students as $student) {
-                                echo '<li>' . htmlspecialchars($student->{"Prenom-etudiant"}) . ' | ' . htmlspecialchars($student->{"Nom-etudiant"}) . '</li>';
-                            }
-                        } else {
-                            echo '<li>Aucun étudiant trouvé pour cette promotion.</li>';
-                        }
-
-                        echo '</ul>';
-                        echo '</div>';
-                    }
-                } else {
-                    echo '<p>Erreur : Impossible de récupérer les promotions.</p>';
-                }
-            ?>
+        <?php include ("../PDO/afficheEtudiant.php"); ?>
         </div>
     </div>
-    <script src="espace_pilote.js"></script>
+    <script src="../controler/espace_pilote.js"></script>
     <div class="wrapper">
         <h2 class="titre-connexion-purple">Statistiques des Stages</h2>
 
@@ -91,8 +62,8 @@
             <button class="filter" data-filter="informatique">Informatique</button>
             <button class="filter" data-filter="generaliste">Généraliste</button>
         </div>
-        
-        <?php include("espace_pilote_pourc.php"); ?>
+    
+        <?php include("../controler/espace_pilote_pourc.php"); ?>
     </div>
 </div>
 <footer>

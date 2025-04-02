@@ -913,10 +913,8 @@ class Admin
     }
     public function matchingContent($keywords = null, $location = null, $type = null) {
         try {
-            // Start with a base query
-            $sql = 'SELECT * FROM offrestage WHERE 1=1';
-    
-            // Add conditions dynamically based on non-null parameters
+            $sql = 'SELECT * FROM offrestage JOIN entreprise ON offrestage.`ID-entreprise` = entreprise.`ID-entreprise` WHERE 1=1';
+
             if (!empty($keywords)) {
                 $sql .= ' AND (`Nom-offre` LIKE :keywords OR `Description-offre` LIKE :keywords OR `Competences-offre` LIKE :keywords)';
             }
@@ -927,9 +925,10 @@ class Admin
                 $sql .= ' AND `Type-offre` LIKE :type';
             }
     
-            $stmt = $this->pdo->prepare($sql);
+            $sql .= ' ORDER BY `ID-offre` DESC';
     
-            // Bind parameters only if they are not null
+            $stmt = $this->pdo->prepare($sql);
+
             if (!empty($keywords)) {
                 $stmt->bindValue(':keywords', '%' . $keywords . '%', PDO::PARAM_STR);
             }
@@ -942,15 +941,13 @@ class Admin
     
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-            // Return results as JSON
+
             return json_encode($results);
         } catch (PDOException $e) {
             echo "Error: " . $e->getMessage() . "<br>";
             return false;
         }
     }
-
 
     #verifie la correspondance email de log / mdp
     public function checkLogValidation($data)
