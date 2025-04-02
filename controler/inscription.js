@@ -4,13 +4,6 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
-function isValidPassword(password) {
-    if (password.length < 10) return false;
-    if (!/[A-Z]/.test(password)) return false;
-    if (!/[0-9]/.test(password)) return false;
-    if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) return false;
-    return true;
-}
 
 function isValidName(name) {
     if (name.length === 0) return false;
@@ -125,18 +118,15 @@ function removeErrorBubble(inputElement) {
 function validateForm() {
     const emailInput = document.getElementById('email');
     const passwordInput = document.getElementById('password');
-    const confirmPasswordInput = document.getElementById('confirmPassword');
-    const nameInput = document.getElementById('name');
     const loginButton = document.getElementById('login-button');
 
     function validateFields() {
         const email = emailInput.value.trim();
         const password = passwordInput.value;
-        const confirmPassword = confirmPasswordInput.value;
-        const name = nameInput.value.trim();
-
+    
         let isValid = true;
-
+    
+        // Email validation
         if (email === '') {
             removeErrorBubble(emailInput);
         } else if (!isValidEmail(email)) {
@@ -145,58 +135,32 @@ function validateForm() {
         } else {
             removeErrorBubble(emailInput);
         }
-
+    
+        // Password validation (check if it's empty)
         if (password === '') {
-            removeErrorBubble(passwordInput);
-        } else if (!isValidPassword(password)) {
-            let errorMsg = 'Le mot de passe doit contenir:';
-            errorMsg += password.length < 10 ? '\n- Au moins 10 caractères' : '';
-            errorMsg += !/[A-Z]/.test(password) ? '\n- Au moins une majuscule' : '';
-            errorMsg += !/[0-9]/.test(password) ? '\n- Au moins un chiffre' : '';
-            errorMsg += !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password) ? '\n- Au moins un caractère spécial' : '';
-
-            showErrorBubble(passwordInput, errorMsg);
+            showErrorBubble(passwordInput, 'Veuillez entrer un mot de passe.');
             isValid = false;
         } else {
             removeErrorBubble(passwordInput);
         }
-
-        if (confirmPassword === '') {
-            removeErrorBubble(confirmPasswordInput);
-        } else if (password !== confirmPassword) {
-            showErrorBubble(confirmPasswordInput, 'Les mots de passe ne correspondent pas. Veuillez vérifier.');
-            isValid = false;
-        } else {
-            removeErrorBubble(confirmPasswordInput);
-        }
-
-        if (name === '') {
-            removeErrorBubble(nameInput);
-        } else if (!isValidName(name)) {
-            showErrorBubble(nameInput, 'Le nom doit commencer par une majuscule et ne doit pas être vide');
-            isValid = false;
-        } else {
-            removeErrorBubble(nameInput);
-        }
-
-        const allFieldsFilled = email && password && confirmPassword;
+    
+        // Enable or disable the login button
+        const allFieldsFilled = email && password;
         loginButton.disabled = !isValid || !allFieldsFilled;
         loginButton.style.opacity = loginButton.disabled ? '0.7' : '1';
         loginButton.style.cursor = loginButton.disabled ? 'not-allowed' : 'pointer';
-
+    
         return isValid;
     }
 
     const debouncedValidate = debounce(validateFields, 300);
     emailInput.addEventListener('input', debouncedValidate);
     passwordInput.addEventListener('input', debouncedValidate);
-    confirmPasswordInput.addEventListener('input', debouncedValidate);
-    nameInput.addEventListener('input', debouncedValidate);
 
     loginButton.addEventListener('click', function(event) {
         event.preventDefault();
         if (validateFields()) {
-            alert('Inscription réussie !');
+            alert('Connexion réussie !');
         } else {
             validateFields();
         }
@@ -205,4 +169,3 @@ function validateForm() {
     validateFields();
 }
 
-document.addEventListener('DOMContentLoaded', validateForm);
