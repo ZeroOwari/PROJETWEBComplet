@@ -3,6 +3,7 @@ function isValidEmail(email) {
     return emailRegex.test(email);
 }
 
+/*
 function isValidPassword(password) {
     if (password.length < 10) return false;
     if (!/[A-Z]/.test(password)) return false;
@@ -10,6 +11,7 @@ function isValidPassword(password) {
     if (!/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password)) return false;
     return true;
 }
+    */
 
 function showErrorBubble(inputElement, message) {
     removeErrorBubble(inputElement);
@@ -124,9 +126,10 @@ function validateForm() {
     function validateFields() {
         const email = emailInput.value.trim();
         const password = passwordInput.value;
-
+    
         let isValid = true;
-
+    
+        // Email validation
         if (email === '') {
             removeErrorBubble(emailInput);
         } else if (!isValidEmail(email)) {
@@ -135,27 +138,21 @@ function validateForm() {
         } else {
             removeErrorBubble(emailInput);
         }
-
+    
+        // Password validation (check if it's empty)
         if (password === '') {
-            removeErrorBubble(passwordInput);
-        } else if (!isValidPassword(password)) {
-            let errorMsg = 'Le mot de passe doit contenir:';
-            errorMsg += password.length < 10 ? '\n- Au moins 10 caractères' : '';
-            errorMsg += !/[A-Z]/.test(password) ? '\n- Au moins une majuscule' : '';
-            errorMsg += !/[0-9]/.test(password) ? '\n- Au moins un chiffre' : '';
-            errorMsg += !/[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(password) ? '\n- Au moins un caractère spécial' : '';
-
-            showErrorBubble(passwordInput, errorMsg);
+            showErrorBubble(passwordInput, 'Veuillez entrer un mot de passe.');
             isValid = false;
         } else {
             removeErrorBubble(passwordInput);
         }
-
+    
+        // Enable or disable the login button
         const allFieldsFilled = email && password;
         loginButton.disabled = !isValid || !allFieldsFilled;
         loginButton.style.opacity = loginButton.disabled ? '0.7' : '1';
         loginButton.style.cursor = loginButton.disabled ? 'not-allowed' : 'pointer';
-
+    
         return isValid;
     }
 
@@ -174,5 +171,3 @@ function validateForm() {
 
     validateFields();
 }
-
-document.addEventListener('DOMContentLoaded', validateForm);
