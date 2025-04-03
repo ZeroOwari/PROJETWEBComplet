@@ -47,10 +47,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "Méthode de requête invalide.";
 }
 
-<?php
+
         // Charger le contenu du JSON
-        include("Entreprise.php");
-        $company = new Entreprise(new PDO('mysql:host=localhost;dbname=web4all', 'root', ''));
+        include("Pilote.php");
+        $company = new Pilote('mysql:host=localhost;dbname=web4all', 'root', '');
 
         $entreprises = json_decode($company->getAllCompanies());
 
