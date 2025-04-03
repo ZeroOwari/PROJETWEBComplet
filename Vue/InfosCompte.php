@@ -76,16 +76,17 @@
   <script>
     // Fonction qui bascule l'affichage entre le <span> et le champ <input>
     function toggleEdit(field) {
-      var displaySpan = document.getElementById(field + '-display');
-      var inputField = document.getElementById(field + '-input');
-      if (inputField.style.display === 'none' || inputField.style.display === '') {
-        inputField.style.display = 'inline-block';
-        displaySpan.style.display = 'none';
-      } else {
-        inputField.style.display = 'none';
-        displaySpan.style.display = 'inline';
-      }
+    const displaySpan = document.getElementById(`${field}-display`);
+    const inputField = document.getElementById(`${field}-input`);
+
+    if (inputField.style.display === "none" || inputField.style.display === "") {
+        inputField.style.display = "inline-block";
+        displaySpan.style.display = "none";
+    } else {
+        inputField.style.display = "none";
+        displaySpan.style.display = "inline";
     }
+}
   </script>
 </head>
 <body class="cmpt">
@@ -135,9 +136,9 @@
         echo '<p class="admin-label">Pilote</p>';
         include('../PDO/InfosComptePil.php');
       }  
-      elseif (isset($_SESSION['log']) && $_SESSION['admin'] == 'Admin'){
+      elseif (isset($_SESSION['log']) && $_SESSION['log'] == 'Admin'){
         echo '<p class="admin-label">Administrateur</p>';
-        include('../PDO/InfosCompteAdmin.php');
+        include('../PDO/InfosCompteAdm.php');
       } 
       else {
         echo '<p class="error">Erreur : Vous n\'êtes pas connecté.</p>';

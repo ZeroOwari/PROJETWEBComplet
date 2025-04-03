@@ -1,4 +1,5 @@
 <?php
+    session_abort();
     session_start();
     include("Admin.php");
 
