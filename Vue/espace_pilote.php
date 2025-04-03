@@ -11,7 +11,9 @@
 <header>
     <nav class="navbar">
         <div class="logo">
-            <img src="assets/logo.png" alt="Web4ALL Logo">
+            <a href="accueil.html">
+                <img src="assets/logo.png" alt="Web4ALL Logo">
+            </a>
         </div>
 
         <div class="services-dropdown">
@@ -20,21 +22,20 @@
                 Services
             </button>
             <div class="dropdown-content">
-                <a href="accueil.html"><i class="fas fa-home"></i> Accueil</a>
-                <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous</a>
-                <a href="avis.html"><i class="fas fa-star"></i> Avis</a>
-                <a href="recherche.html"><i class="fas fa-search"></i> Recherche</a>
-                <a href="espace-tuteur.html"><i class="fas fa-chalkboard-teacher"></i> Espace Tuteur</a>
-                <a href="mon-compte-etudiant.html"><i class="fas fa-user-graduate"></i> Mon compte Étudiant</a>
-                <a href="mon-compte-tuteur.html"><i class="fas fa-user-tie"></i> Mon compte Tuteur</a>
+                <a href="accueil.html"><i class="fas fa-home"></i> Accueil </a>
+                <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous </a>
+                <a href="avis.html"><i class="fas fa-star"></i> Avis </a>
+                <a href="InfosCompte.php"><i class="fas fa-user-graduate"></i> Mon compte </a>
+                <a href="espace_pilote.php"><i class="fas fa-user-tie"></i> Statistiques </a>
             </div>
         </div>
         <h1> P.A.I.J </h1>
         <div class="right-menu">
-            <a href="connexion.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
-            <a href="espace-recruteur.html" class="nav-button"><i class="fas fa-briefcase"></i> Espace recruteur</a>
+            <a href="choix-profil.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+            <a href="espace_pilote.php" class="nav-button"><i class="fas fa-chart-line"></i> Statistiques</a>
         </div>
     </nav>
+
 </header>
 
 <div class="containerpilote">

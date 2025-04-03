@@ -90,32 +90,35 @@
   </script>
 </head>
 <body class="cmpt">
-  <header>
+<header>
     <nav class="navbar">
-      <div class="logo">
-        <img src="assets/logo.png" alt="Web4ALL Logo">
-      </div>
-      <div class="services-dropdown">
-        <button class="hamburger-menu">
-          <span class="hamburger-icon"></span>
-          Services
-        </button>
-        <div class="dropdown-content">
-          <a href="choix-profil.html">Accueil</a>
-          <a href="a-propos.html">À propos de nous</a>
-          <a href="avis.html">Avis</a>
-          <a href="recherche.html">Recherche</a>
-          <a href="espace-tuteur.html">Espace Tuteur</a>
-          <a href="mon-compte-etudiant.html">Mon compte Étudiant</a>
-          <a href="mon-compte-tuteur.html">Mon compte Tuteur</a>
+        <div class="logo">
+            <a href="accueil.html">
+                <img src="assets/logo.png" alt="Web4ALL Logo">
+            </a>
         </div>
-      </div>
-      <div class="right-menu">
-        <a href="connexion.html" class="nav-button">Connexion</a>
-        <a href="espace-recruteur.html" class="nav-button">Espace recruteur</a>
-      </div>
+
+        <div class="services-dropdown">
+            <button class="hamburger-menu">
+                <span class="hamburger-icon"></span>
+                Services
+            </button>
+            <div class="dropdown-content">
+                <a href="accueil.html"><i class="fas fa-home"></i> Accueil </a>
+                <a href="a-propos.html"><i class="fas fa-info-circle"></i> À propos de nous </a>
+                <a href="avis.html"><i class="fas fa-star"></i> Avis </a>
+                <a href="InfosCompte.php"><i class="fas fa-user-graduate"></i> Mon compte </a>
+                <a href="espace_pilote.php"><i class="fas fa-user-tie"></i> Statistiques </a>
+            </div>
+        </div>
+        <h1> P.A.I.J </h1>
+        <div class="right-menu">
+            <a href="choix-profil.html" class="nav-button active"><i class="fas fa-sign-in-alt"></i> Connexion</a>
+            <a href="espace_pilote.php" class="nav-button"><i class="fas fa-chart-line"></i> Statistiques</a>
+        </div>
     </nav>
-  </header>
+
+</header>
 
   <section class="banner">
     <h1>Informations du compte</h1>
