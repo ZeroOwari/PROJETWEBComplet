@@ -1,5 +1,5 @@
 <?php
-    session_abort();
+    session_destroy();
     session_start();
     include("Etudiant.php");
 
