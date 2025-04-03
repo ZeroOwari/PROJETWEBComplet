@@ -27,7 +27,7 @@
     include("../PDO/afficheOffre.php");
   ?>
 
-<script src="java.js"></script>
+<script src="../controler/java.js"></script>
 </body>
 </html>
 
