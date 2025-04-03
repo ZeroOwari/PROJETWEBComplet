@@ -128,16 +128,16 @@
       </div>
     <form class="infos-compte" action="InfosCompte.php" method="POST">
       <?php if (isset($_SESSION['log']) && $_SESSION['log'] == 'Etudiant') { 
-        include("InfosCompteEtu.php"); 
         echo '<p class="student-label">Étudiant</p>';
+        include("../PDO/InfosCompteEtu.php"); 
       }
       elseif (isset($_SESSION['log']) && $_SESSION['log'] == 'Pilote'){
-        include('InfosComptePil.php');
         echo '<p class="admin-label">Pilote</p>';
+        include('../PDO/InfosComptePil.php');
       }  
       elseif (isset($_SESSION['log']) && $_SESSION['admin'] == 'Admin'){
-        include('InfosCompteAdmin.php');
         echo '<p class="admin-label">Administrateur</p>';
+        include('../PDO/InfosCompteAdmin.php');
       } 
       else {
         echo '<p class="error">Erreur : Vous n\'êtes pas connecté.</p>';
