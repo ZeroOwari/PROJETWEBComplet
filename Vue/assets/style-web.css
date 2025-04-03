@@ -1189,3 +1189,770 @@
       font-size: 20px;
     }
   }
+
+
+
+
+
+
+/*****************************************************************************************/
+
+
+/* Général */
+body_Recruteur_offre {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+
+
+
+.container_recruteur_offre {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8%;
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 15%;
+    flex-wrap: wrap;
+}
+
+
+.Offre_visible_modifier_offre_recruteur_offre,
+.ajouter_une_offre {
+    position: relative;
+    width: 45%;
+    height: 500px;
+    background-color: #7B8EEE;
+    border-radius: 20px;
+}
+
+
+
+.formulaire_Recruteur_offre {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+.input_intitule_mission_Recruteur_offre{
+    position: absolute;
+    top: 13%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_localisation_Recruteur_offre{
+    position: absolute;
+    top: 21%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_Competence_Recruteur_offre{
+    position: absolute;
+    top: 29%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_base_de_remuneration_Recruteur_offre{
+    position: absolute;
+    top: 37%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_textarea_description_Recruteur_offre{
+    position: absolute;
+    top: 43%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 35px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_debut_du_stage_Recruteur_offre{
+    position: absolute;
+    top: 58%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_fin_du_stage_Recruteur_offre{
+    position: absolute;
+    top: 66%;
+    margin-top: 1vh;
+    width: 20vw;
+    margin-left: 29vw;
+    transform: translate(-30%,55%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.input_supprimer_offre_Recruteur_offre{
+    position: absolute;
+    width: 20%;
+    height: 5%;
+    border-radius: 20px;
+    left: 62.5%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+    color: #9CA6DB;
+    border : none;
+    background-color: white;
+}
+.input_modifier_offre_Recruteur_offre {
+    position: absolute;
+    width: 20%;
+    height: 5%;
+    border-radius: 20px;
+    left: 87.5%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+    color: #9CA6DB;
+    background-color: white;
+    border : none;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    .formulaire_Recruteur_offre {
+        align-items: center;
+        width: 100%;
+    }
+
+    input::placeholder {
+        color: #9CA6DB;
+        opacity: 1;
+        font-weight: bold;
+        font-size: 10px;
+        text-align: center;
+
+    }
+    textarea::placeholder {
+        color: #9CA6DB;
+        opacity: 1;
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+
+
+
+    .input_intitule_mission_Recruteur_offre{
+        position: absolute;
+        top: 16%;
+        width: 35vw;
+        margin-left: 58vw;
+        transform: translate(-30%);
+        height: 20px;
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+
+    }
+    .input_localisation_Recruteur_offre{
+        position: absolute;
+        top: 22%;
+        width: 35vw;
+        margin-left: 58vw;
+        transform: translate(-30%);
+        height: 20px;
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+
+
+    }
+    .input_Competence_Recruteur_offre{
+        position: absolute;
+        top: 28%;
+        width: 35vw;
+        margin-left: 58vw;
+        transform: translate(-30%);
+        height: 20px;
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+    }
+    .input_base_de_remuneration_Recruteur_offre{
+        position: absolute;
+        top: 34%;
+        width: 35vw; /* 30% de la largeur de la page */
+        margin-left: 58vw; /* Se place à 75% de la page */
+        transform: translate(-30%); /* Correction pour bien aligner */
+        height: 20px; /* Hauteur standard */
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+    }
+    .input_textarea_description_Recruteur_offre{
+        position: absolute;
+        top: 40%;
+        width: 35vw; /* 30% de la largeur de la page */
+        margin-left: 58vw; /* Se place à 75% de la page */
+        transform: translate(-30%); /* Correction pour bien aligner */
+        height: 70px; /* Hauteur standard */
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+    }
+    .input_debut_du_stage_Recruteur_offre{
+        margin-top: 0.5vh;
+        width: 38vw; /* 30% de la largeur de la page */
+        margin-left: 58vw; /* Se place à 75% de la page */
+        transform: translate(-30%,50%); /* Correction pour bien aligner */
+        height: 30px; /* Hauteur standard */
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+    }
+    .input_fin_du_stage_Recruteur_offre{
+        margin-top: 0.5vh;
+        width: 38vw; /* 30% de la largeur de la page */
+        margin-left: 58vw; /* Se place à 75% de la page */
+        transform: translate(-30%,50%); /* Correction pour bien aligner */
+        height: 30px; /* Hauteur standard */
+        border-radius: 10px;
+        text-align: center;
+        border: none;
+        color: #9CA6DB;
+    }
+
+
+    .input_supprimer_offre_Recruteur_offre{
+        position: absolute;
+
+        width: 38vw;
+        height: 5%;
+        border-radius: 20px;
+        top: 86%;
+        left: 77%;
+        transform: translate(-50%,-50%);
+        color: #9CA6DB;
+        border : none;
+        background-color: white;
+    }
+
+    .input_modifier_offre_Recruteur_offre {
+        position: absolute;
+
+        width: 38vw;
+        height: 5%;
+        border-radius: 20px;
+        left: 77%;
+        top: 80%;
+        transform: translate(-50%,-50%);
+        color: #9CA6DB;
+        border : none;
+        background-color: white;
+    }
+
+    .icon_malette_Recruteur_offre{
+        position: absolute;
+        top: 58%;
+        left: 20%;
+    }
+
+
+
+
+
+
+
+}
+
+
+.parent {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+}
+
+
+.titre_ajouter_une_offre{
+    position: relative;
+    left: 75%;
+    transform: translateX(-50%);
+    font-size: 3vw;
+    font-weight: bold;
+    color: #ffffff;
+}
+.offre_visible_Recruteur_offre{
+    position: absolute;
+    left: 25%;
+    top: 8%;
+    transform: translate(-50%,-50%);
+    font-size: 3vw;
+    font-weight: bold;
+    color: #ffffff;
+}
+.Modifier_offre_Recruteur_offre {
+    position: absolute;
+    left: 75%;
+    top: 8%;
+    transform: translate(-50%,-50%);
+    font-size: 3vw;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+
+.Modifier_offre_Recruteur_offre {
+    margin-left: auto;
+}
+
+
+.barre_horizontal_recruteur_offre {
+    position: absolute;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0.5%;
+    background-color: #ffffff;
+    top: 15%;
+    border-radius: 10px;
+}
+
+.barre_vertical_recruteur_offre {
+    position: absolute;
+    width: 0.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    background-color: #ffffff;
+    top: 50%;
+    border-radius: 10px;
+}
+
+.container_offre_visible_Recruteur_offre {
+    position: absolute;
+    width: 50%;
+    max-height: 60vh;
+    height: 50vh;
+    top: 16%;
+    left: 1%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 20px;
+
+}
+
+
+.container_offre_visible_Recruteur_offre::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.container_offre_visible_Recruteur_offre::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+.case_pour_annonce_Recruteur_offre {
+    position: relative;
+    width: 88%;
+    height: auto;
+    background-color: #F4F7FF;
+    border-radius: 1.25rem;
+    z-index: 1000;
+    margin-bottom: 3.125rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+@media (max-width: 768px) {
+    .container_recruteur_offre {
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+
+    .Offre_visible_modifier_offre_recruteur_offre,
+    .ajouter_une_offre {
+        width: 90% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .titre_ajouter_une_offre{
+        left: 50%;
+        transform: translateX(-50%);
+        +
+
+
+
+
+        font-size: 7vw !important;
+    }
+
+
+
+    .logo_de_l_entreprise_Recruteur_offre {
+        position: absolute !important;
+        width: 10vw !important;
+        max-width: 30px !important;
+        top: 10% !important;
+        left: 2% !important;
+    }
+
+    .intitule_de_la_mission_Offre_visible_Recruteur_offre {
+        position: absolute !important;
+        font-size: 3vw !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        white-space: wrap !important;
+        top: 2%;
+
+    }
+
+    .Localisation_entreprise_Recruteur_offre {
+        position: absolute !important;
+        font-size: 4vw !important;
+        top: 55% !important;
+        left: 35% !important;
+        flex-wrap: wrap !important;
+
+        font-weight: bold !important;
+        white-space: wrap !important;
+        max-width: 500px !important;
+    }
+
+    .nom_de_l_entreprise_Recruteur_offre {
+        position: absolute !important;
+        font-size: 4vw !important;
+        top: 32% !important;
+        left: 47% !important;
+        flex-wrap: wrap !important;
+
+        font-weight: bold !important;
+        white-space: wrap !important;
+        max-width: 500px !important;
+    }
+
+    .type_de_contrat_recruteur_offre{
+        position: absolute !important;
+        font-size: 4vw !important;
+        top: 72% !important;
+        left: 35% !important;
+        flex-wrap: wrap !important;
+
+        font-weight: bold !important;
+        white-space: wrap !important;
+        max-width: 500px !important;
+    }
+
+    .icon_localisation_Recruteur_offre{
+        position: absolute !important;
+        top: 58% !important;
+        left: 12% !important;
+
+    }
+
+
+    .icon_malette_Recruteur_offre{
+        width: 5vw !important;
+        max-width: 40px !important;
+    }
+    .icon_localisation_Recruteur_offre{
+        width: 5vw !important;
+        max-width: 40px !important;
+    }
+    .icon_start_Recruteur_offre{
+        width: 15vw !important;
+        max-width: 20px !important;
+    }
+    .icon_end_Recruteur_offre {
+        width: 15vw !important;
+        max-width: 20px !important;
+    }
+
+    .icon_malette_Recruteur_offre {
+        top: 70% !important;
+        left: 20% !important;
+    }
+
+    .icon_localisation_Recruteur_offre {
+        top: 55% !important;
+        left: 20% !important;
+    }
+
+    .icon_start_Recruteur_offre {
+        top: 63% !important;
+        left: 54% !important;
+    }
+
+    .icon_end_Recruteur_offre {
+        top: 70.5% !important;
+        left: 54% !important;
+    }
+}
+
+
+
+.logo_de_l_entreprise_Recruteur_offre {
+    position: absolute;
+    width: 6vw;
+    max-width: 30px;
+    top: 10%;
+}
+
+
+.intitule_de_la_mission_Offre_visible_Recruteur_offre {
+    position: absolute;
+    font-size: 1.2vw;
+    left: 60%;
+    transform: translate(-50%,-25%);
+    text-align: center;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.Localisation_entreprise_Recruteur_offre {
+    position: absolute;
+    font-size: 1vw;
+    top: 58%;
+    left: 80%;
+
+}
+.icon_localisation_Recruteur_offre{
+    position: absolute;
+    top: 58%;
+    left: 75%;
+}
+.nom_de_l_entreprise_Recruteur_offre {
+    position: absolute;
+    font-size: 1vw;
+    top: 33%;
+    left: 60%;
+    max-width: 300px;
+    transform: translateX(-50%);
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.type_de_contrat_recruteur_offre{
+    font-size: 1vw;
+    position: absolute;
+    top: 58%;
+    left: 25%;
+
+}
+
+
+
+
+.Barre_verticale_case_pour_annonce_Recruteur_offre {
+    position: absolute;
+    width: 1%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    height: 90%;
+    background-color: #ffffff;
+    top: 50%;
+    border-radius: 10px;
+}
+.Barre_horizontale_case_pour_annonce_Recruteur_offre {
+    position: absolute;
+    width: 100%;
+    left: 50%;
+
+    transform: translateX(-50%);
+    height: 3%;
+    background-color: #ffffff;
+    top: 30%;
+    border-radius: 10px;
+}
+
+.icon_malette_Recruteur_offre{
+    position: absolute;
+    top: 58%;
+    left: 20%;
+}
+
+
+
+
+.icon_start_Recruteur_offre{
+    position: absolute;
+    top: 63%;
+    left: 53%;
+}
+
+.icon_end_Recruteur_offre{
+    position: absolute;
+    top: 71%;
+    left: 53%;
+}
+
+
+.ajout_input_intitule_mission_Recruteur_offre{
+    position: absolute;
+    top: 16%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_localisation_Recruteur_offre{
+    position: absolute;
+    top: 24%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_Competence_Recruteur_offre{
+    position: absolute;
+    top: 32%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_base_de_remuneration_Recruteur_offre{
+    position: absolute;
+    top: 40%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_textarea_description_Recruteur_offre{
+    position: absolute;
+    top: 48%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 60px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_debut_du_stage_Recruteur_offre{
+    position: absolute;
+    top: 63%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+.ajout_input_fin_du_stage_Recruteur_offre{
+    position: absolute;
+    top: 71%;
+    margin-top: 1vh;
+    width: 20vw;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
+
+.ajout_input_offre_Recruteur_offre{
+    position: absolute;
+    top: 80%;
+    margin-top: 1vh;
+    width: 30vw;
+    height: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 30px;
+    text-align: center;
+    border: none;
+    color: #9CA6DB;
+}
