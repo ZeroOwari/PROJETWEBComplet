@@ -2133,3 +2133,327 @@ body_Recruteur_offre {
   border: none;
   color: #9CA6DB;
 }
+
+/* Styles spécifiques pour la page de gestion des étudiants */
+/* Préfixe "student-" pour éviter les conflits */
+
+/* Styles généraux de la page */
+body.student-management-page {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.student-management-page h1 {
+  color: #7B2985;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  border-bottom: 3px solid #7B8EEE;
+  padding-bottom: 10px;
+}
+
+.student-management-page h2 {
+  color: #7B2985;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  border-left: 5px solid #7B8EEE;
+  padding-left: 15px;
+}
+
+/* Styles des formulaires */
+.student-form {
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.student-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.student-form input[type="text"],
+.student-form input[type="email"],
+.student-form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.student-form input:focus {
+  border-color: #7B8EEE;
+  outline: none;
+  box-shadow: 0 0 5px rgba(123, 142, 238, 0.5);
+}
+
+/* Styles des boutons */
+.student-btn {
+  background-color: #7B8EEE;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.student-btn:hover {
+  background-color: #7B2985;
+}
+
+/* Disposition des formulaires */
+@media (min-width: 768px) {
+  .student-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .student-full-width-form {
+    grid-column: span 2;
+  }
+}
+
+/* Pour différencier visuellement les sections de formulaire */
+.student-search-form {
+  border-top: 3px solid #7B8EEE;
+}
+
+.student-create-form {
+  border-top: 3px solid #7B2985;
+}
+
+.student-update-form {
+  border-top: 3px solid #7B8EEE;
+}
+
+.student-delete-form {
+  border-top: 3px solid #7B2985;
+}
+
+.student-stats-form {
+  border-top: 3px solid #7B8EEE;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.avis-page-titre {
+  width: 100%;
+  color: #5A1763;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+/* Colonne gauche - Formulaire */
+.avis-col-gauche {
+  flex: 1;
+  min-width: 300px;
+}
+
+.avis-container {
+  width: 100%;
+}
+
+.avis-titre-section {
+  color: #5A1763;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.avis-formulaire {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.avis-groupe-formulaire {
+  margin-bottom: 15px;
+}
+
+.avis-label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #5A1763;
+}
+
+.avis-input,
+.avis-textarea,
+.avis-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.avis-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.avis-evaluation {
+  margin-bottom: 15px;
+}
+
+.avis-etoiles {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.avis-etoiles input {
+  display: none;
+}
+
+.avis-etoiles-label {
+  cursor: pointer;
+  width: 25px;
+  font-size: 25px;
+  color: #ddd;
+  margin-right: 5px;
+}
+
+.avis-etoiles-label:before {
+  content: '★';
+}
+
+.avis-etoiles input:checked ~ .avis-etoiles-label {
+  color: #7B8EEE;
+}
+
+.avis-etoiles-label:hover,
+.avis-etoiles-label:hover ~ .avis-etoiles-label {
+  color: #7B8EEE;
+}
+
+.avis-bouton-soumettre {
+  background-color: #5A1763;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin: 0 auto;
+}
+
+.avis-bouton-soumettre:hover {
+  background-color: #7B8EEE;
+}
+
+.avis-separateur {
+  height: 3px;
+  background: linear-gradient(to right, #5A1763, #7B8EEE);
+  margin: 20px 0;
+  border-radius: 2px;
+}
+
+/* Colonne droite - Liste des avis */
+.avis-col-droite {
+  flex: 1;
+  min-width: 300px;
+}
+
+.avis-liste-container {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: 600px;
+  overflow-y: auto;
+  padding: 5px;
+}
+
+.avis-liste-titre {
+  color: #5A1763;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.avis-liste {
+  list-style-type: none;
+}
+
+.avis-item {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-left: 4px solid #7B8EEE;
+}
+
+.avis-item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.avis-item-nom {
+  font-weight: bold;
+  color: #5A1763;
+}
+
+.avis-item-date {
+  color: #888;
+  font-size: 14px;
+}
+
+.avis-item-sujet {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.avis-item-commentaire {
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.avis-item-note {
+  color: #7B8EEE;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .avis-page {
+    flex-direction: column;
+  }
+
+  .avis-col-gauche,
+  .avis-col-droite {
+    width: 100%;
+  }
+
+  .avis-liste-container {
+    height: 400px;
+  }
+}
+
+
+
+
