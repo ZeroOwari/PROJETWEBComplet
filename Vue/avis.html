@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web4ALL Navigation</title>
-  <link rel="stylesheet" href="assets/style-web.css">
-  <script src="../controler/connexion.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web4ALL Navigation</title>
+    <link rel="stylesheet" href="assets/style-web.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="body bg-pink">
 <header>
-  <nav class="navbar">
-    <div class="logo">
-      <a href="accueil.html">
-        <img src="assets/logo.png" alt="Web4ALL Logo">
-      </a>
-    </div>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Web4ALL Logo">
+        </div>
 
     <div class="services-dropdown">
       <button class="hamburger-menu">
@@ -38,201 +35,110 @@
   </nav>
 
 </header>
+<div class="avis-page">
+    <h1 class="avis-page-titre">Vos avis sont importants</h1>
+    <div class="avis-col-gauche">
+        <div class="avis-container">
+            <h2 class="avis-titre-section">Partagez votre expérience</h2>
+            <div class="avis-formulaire">
+                <form id="avis-form" action="#" method="post">
+                    <div class="avis-groupe-formulaire">
+                        <label for="avis-nom" class="avis-label">Nom</label>
+                        <input type="text" id="avis-nom" name="nom" class="avis-input" required>
+                    </div>
 
+                    <div class="avis-groupe-formulaire">
+                        <label for="avis-email" class="avis-label">Email</label>
+                        <input type="email" id="avis-email" name="email" class="avis-input" required>
+                    </div>
 
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulaire d'avis</title>
-  <style>
-    :root {
-      --couleur-primaire: #5A1763;
-      --couleur-secondaire: #7B8EEE;
-    }
+                    <div class="avis-groupe-formulaire">
+                        <label for="avis-sujet" class="avis-label">Sujet</label>
+                        <input type="text" id="avis-sujet" name="sujet" class="avis-input" required>
+                    </div>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+                    <div class="avis-evaluation">
+                        <label class="avis-label">Votre satisfaction</label>
+                        <div class="avis-etoiles">
+                            <input type="radio" id="avis-etoile5" name="note" value="5">
+                            <label for="avis-etoile5" class="avis-etoiles-label"></label>
+                            <input type="radio" id="avis-etoile4" name="note" value="4">
+                            <label for="avis-etoile4" class="avis-etoiles-label"></label>
+                            <input type="radio" id="avis-etoile3" name="note" value="3">
+                            <label for="avis-etoile3" class="avis-etoiles-label"></label>
+                            <input type="radio" id="avis-etoile2" name="note" value="2">
+                            <label for="avis-etoile2" class="avis-etoiles-label"></label>
+                            <input type="radio" id="avis-etoile1" name="note" value="1">
+                            <label for="avis-etoile1" class="avis-etoiles-label"></label>
+                        </div>
+                    </div>
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+                    <div class="avis-groupe-formulaire">
+                        <label for="avis-commentaire" class="avis-label">Votre avis</label>
+                        <textarea id="avis-commentaire" name="commentaire" class="avis-textarea" required></textarea>
+                    </div>
 
-    .titre-section {
-      color: var(--couleur-primaire);
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 28px;
-    }
-
-    .formulaire-avis {
-      background-color: #f9f9f9;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .groupe-formulaire {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      font-weight: bold;
-      color: var(--couleur-primaire);
-    }
-
-    input[type="text"],
-    input[type="email"],
-    select,
-    textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-      font-size: 16px;
-    }
-
-    textarea {
-      height: 150px;
-      resize: vertical;
-    }
-
-    .evaluation {
-      margin-bottom: 20px;
-    }
-
-    .etoiles {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: flex-end;
-    }
-
-    .etoiles input {
-      display: none;
-    }
-
-    .etoiles label {
-      cursor: pointer;
-      width: 30px;
-      font-size: 30px;
-      color: #ddd;
-      margin-right: 5px;
-    }
-
-    .etoiles label:before {
-      content: '★';
-    }
-
-    .etoiles input:checked ~ label {
-      color: var(--couleur-secondaire);
-    }
-
-    .etoiles label:hover,
-    .etoiles label:hover ~ label {
-      color: var(--couleur-secondaire);
-    }
-
-    .bouton-soumettre {
-      background-color: var(--couleur-primaire);
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .bouton-soumettre:hover {
-      background-color: var(--couleur-secondaire);
-    }
-
-    /* Ajout d'une ligne décorative avec les deux couleurs */
-    .separateur {
-      height: 4px;
-      background: linear-gradient(to right, var(--couleur-primaire), var(--couleur-secondaire));
-      margin: 30px 0;
-      border-radius: 2px;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .container {
-        padding: 20px 15px;
-      }
-
-      .formulaire-avis {
-        padding: 20px;
-      }
-    }
-  </style>
-</head>
-<body>
-<!-- Votre header existant irait ici -->
-
-<div class="container">
-  <h1 class="titre-section">Votre avis nous intéresse</h1>
-
-  <div class="formulaire-avis">
-    <div class="separateur"></div>
-
-    <form id="form-avis" action="#" method="post">
-      <div class="groupe-formulaire">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" name="nom" required>
-      </div>
-
-      <div class="groupe-formulaire">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-
-      <div class="groupe-formulaire">
-        <label for="sujet">Sujet</label>
-        <input type="text" id="sujet" name="sujet" required>
-      </div>
-
-      <div class="evaluation">
-        <label>Votre satisfaction</label>
-        <div class="etoiles">
-          <input type="radio" id="etoile5" name="note" value="5">
-          <label for="etoile5"></label>
-          <input type="radio" id="etoile4" name="note" value="4">
-          <label for="etoile4"></label>
-          <input type="radio" id="etoile3" name="note" value="3">
-          <label for="etoile3"></label>
-          <input type="radio" id="etoile2" name="note" value="2">
-          <label for="etoile2"></label>
-          <input type="radio" id="etoile1" name="note" value="1">
-          <label for="etoile1"></label>
+                    <button type="submit" class="avis-bouton-soumettre">Envoyer</button>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
+</div>
+<div>
+    <div class="avis-col-droite">
+        <h2 class="avis-liste-titre">Avis de nos clients</h2>
 
-      <div class="groupe-formulaire">
-        <label for="commentaire">Votre avis</label>
-        <textarea id="commentaire" name="commentaire" required></textarea>
-      </div>
+        <div class="avis-liste-container">
+            <ul class="avis-liste">
 
-      <button type="submit" class="bouton-soumettre">Envoyer</button>
-    </form>
-
-    <div class="separateur"></div>
-  </div>
+                <li class="avis-item">
+                    <div class="avis-item-header">
+                        <span class="avis-item-nom">Marie Dupont</span>
+                        <span class="avis-item-date">15/03/8000</span>
+                    </div>
+                    <div class="avis-item-sujet">Service client excellent</div>
+                    <p class="avis-item-commentaire">
+                        J'ai été très impressionnée par la réactivité du service client. Mon problème a été résolu en moins de 24h !
+                    </p>
+                    <div class="avis-item-note">★★★★★</div>
+                </li>
+                <li class="avis-item">
+                    <div class="avis-item-header">
+                        <span class="avis-item-nom">Jean Martin</span>
+                        <span class="avis-item-date">10/03/2025</span>
+                    </div>
+                    <div class="avis-item-sujet">Produit de qualité</div>
+                    <p class="avis-item-commentaire">
+                        Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                    </p>
+                    <div class="avis-item-note">★★★★☆</div>
+                </li>
+                <li class="avis-item">
+                    <div class="avis-item-header">
+                        <span class="avis-item-nom">Jean Martin</span>
+                        <span class="avis-item-date">10/03/2025</span>
+                    </div>
+                    <div class="avis-item-sujet">Produit de qualité</div>
+                    <p class="avis-item-commentaire">
+                        Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                    </p>
+                    <div class="avis-item-note">★★★★☆</div>
+                </li>
+                <li class="avis-item">
+                    <div class="avis-item-header">
+                        <span class="avis-item-nom">Jean Martin</span>
+                        <span class="avis-item-date">10/03/2025</span>
+                    </div>
+                    <div class="avis-item-sujet">Produit de qualité</div>
+                    <p class="avis-item-commentaire">
+                        Le produit correspond parfaitement à la description. Je suis très satisfait de mon achat et je recommande cette boutique.
+                    </p>
+                    <div class="avis-item-note">★★★★☆</div>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 
-<!-- Votre footer existant irait ici -->
-</body>
-</html>
 </body>
 </html>
