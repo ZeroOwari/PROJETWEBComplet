@@ -1,3 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto Light", sans-serif;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Classes de base */
+.bg-pink {
+  background-color: #F4F7FF;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  background-color: #5D5897;
+  color: white;
+  justify-content: space-between;
+}
+
+.logo {
+  padding: 5px 4px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.services-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-menu {
+  display: none; /* Caché par défaut */
+  align-items: center;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  font-size: 16px;
+}
+
+.hamburger-icon {
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  position: relative;
+  margin-right: 10px;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+  content: '';
+  width: 20px;
+  height: 2px;
+  background-color: white;
+  position: absolute;
+  left: 0;
+}
+
+.hamburger-icon:before {
+  top: -6px;
+}
+
+.hamburger-icon:after {
+  top: 6px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #5D5897;
+  min-width: 200px;
+  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content a:hover {
+  background-color: #7B8EEE;
+}
+
+.services-dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.right-menu {
+  margin-left: auto;
+  display: flex;
+  padding-right: 20px;
+}
+
+.nav-button {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  height: 60px;
+  line-height: 40px;
+}
+
+.nav-button:hover {
+  background-color: #7B8EEE;
+}
+
+/* Media Queries */
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
   * {
     margin: 0;
     padding: 0;
@@ -11,6 +143,7 @@
     padding: 0;
   }
 
+  /* Classes de base */
   .bg-pink {
     background-color: #F4F7FF;
   }
@@ -23,13 +156,20 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: 200px; /* Hauteur augmentée pour tester */
     background-color: #5D5897;
     color: white;
+    justify-content: space-between;
+    position: relative; /* Nécessaire pour positionner les éléments enfants en absolute */
+    z-index: 1; /* S'assurer que la navbar n'interfère pas avec le menu déroulant */
   }
 
   .logo {
     padding: 5px 4px;
+    position: absolute; /* Positionné absolument */
+    top: 10px; /* Ajuste la position verticale */
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   .logo img {
@@ -37,12 +177,17 @@
   }
 
   .services-dropdown {
-    position: relative;
-    display: inline-block;
+    position: absolute; /* Positionné absolument */
+    top: 10px; /* Ajuste selon l'emplacement souhaité */
+    left: 40%;
+    transform: translateX(-50%); /* Centré horizontalement */
   }
 
   .hamburger-menu {
-    display: flex;
+    display: block; /* Afficher le hamburger */
+    position: absolute; /* Positionné absolument */
+    top: 70px; /* Ajuste la position verticale */
+    left: 90px; /* Positionné à droite */
     align-items: center;
     background-color: transparent;
     color: white;
@@ -50,6 +195,7 @@
     cursor: pointer;
     padding: 15px 20px;
     font-size: 16px;
+    z-index: 2; /* Assure-toi que le hamburger est au-dessus des autres éléments de la navbar */
   }
 
   .hamburger-icon {
@@ -81,11 +227,13 @@
 
   .dropdown-content {
     display: none;
-    position: absolute;
+    position: absolute; /* Positionné absolument */
     background-color: #5D5897;
     min-width: 200px;
-    z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 9999; /* Z-index très élevé pour garantir qu'il soit au-dessus */
+    top: 190px; /* Position verticale du menu déroulant */
+    left: 0;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   }
 
   .dropdown-content a {
@@ -108,15 +256,27 @@
     margin-left: auto;
     display: flex;
     padding-right: 20px;
+    position: absolute; /* Positionné absolument */
+    top: 70%; /* Par exemple, ajuster selon le placement */
+    left: 50%; /* Positionné à droite */
+    transform: translateX(-50%); /* Centré verticalement */
+    z-index: 10; /* Assure-toi que .right-menu est derrière le menu déroulant */
+  }
+
+  .right-menu.open {
+    display: flex; /* Afficher le menu lorsqu'il est ouvert */
   }
 
   .nav-button {
+    position: relative;
+    top: -60px;
+    left: -70px;
     display: inline-block;
     color: white;
     text-decoration: none;
-    padding: 10px 15px;
+    padding: 10px;
     border-left: 1px solid rgba(255, 255, 255, 0.2);
-    height: 60px;
+    height: 50px;
     line-height: 40px;
   }
 
@@ -124,7 +284,18 @@
     background-color: #7B8EEE;
   }
 
-  .container {
+
+
+
+
+
+
+}
+
+
+
+
+.container {
     width: 100%;
     height: 90px;
     padding: 0 1rem;
