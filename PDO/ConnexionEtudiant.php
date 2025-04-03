@@ -37,6 +37,6 @@
     } else {
         // Authentification échouée
         session_destroy(); // Détruire la session en cas d'échec
-        //header("Location: ../Vue/connexion-etu.html?login=failed");
+        header("Location: ../Vue/connexion-etu.html?login=failed");
     }
 ?>
