@@ -469,7 +469,7 @@
 
   body.mentions {
     text-align: center;
-    background-color: #b4e0f0;
+    background-color: #f0f0f5;
     display: flex;
     flex-direction: column;
     margin-left: 70px;
@@ -1127,6 +1127,32 @@
   .filters button:hover {
     background-color: #5A1763;
   }
+
+  .titreMention, .contentMention {
+    width: 90%;
+    max-width: 800px;
+    text-align: justify;
+    padding: 10px;
+    margin: 10px auto;
+    word-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+
+  }
+  .titreMention {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #5D5897;
+  }
+  .contentMention {
+    background-color: #7B8EEE;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    color: white;
+  }
+
 
   @media (max-width: 1024px) {
     .containerpilote {
