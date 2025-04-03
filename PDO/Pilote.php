@@ -81,7 +81,7 @@ class Pilote
     }
     public function sessionLog($email, $password) {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM pilotepromo WHERE `Email-pilote` = :email');
+            $stmt = $this->pdo->prepare('SELECT `Prenom-pilote`, `Nom-pilote`, `Email-pilote`, `MDP-pilote` FROM pilotepromo WHERE `Email-pilote` = :email');
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();
             $admin = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -94,8 +94,7 @@ class Pilote
                     $admin['Prenom-pilote'],
                     $admin['Nom-pilote'],
                     $admin['Email-pilote'],
-                    $admin['MDP-pilote'],
-                    $admin['ID-pilote']
+                    $admin['MDP-pilote']
                 ];
             } else {
                 return false;

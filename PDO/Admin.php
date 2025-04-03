@@ -164,7 +164,7 @@ class Admin
 
     public function sessionLog($email, $password) {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM admin WHERE `Email-admin` = :email');
+            $stmt = $this->pdo->prepare('SELECT `Prenom-admin`, `Nom-admin`, `Email-admin`, `MDP-admin` FROM admin WHERE `Email-admin` = :email');
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();
             $admin = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -177,8 +177,7 @@ class Admin
                     $admin['Prenom-admin'],
                     $admin['Nom-admin'],
                     $admin['Email-admin'],
-                    $admin['MDP-admin'],
-                    $admin['ID-admin'],  
+                    $admin['MDP-admin']
                 ];
             } else {
                 return false;

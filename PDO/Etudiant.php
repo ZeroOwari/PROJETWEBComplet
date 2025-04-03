@@ -121,9 +121,10 @@ class Etudiant
         }
     }
 
+
     public function sessionLog($email, $password) {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM etudiant JOIN promotion ON promotion.`ID-promo`=etudiant.`ID-promotion-etudiant` WHERE `Email-etudiant` = :email');
+            $stmt = $this->pdo->prepare('SELECT * FROM etudiant WHERE `Email-etudiant` = :email');
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();
             $admin = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -139,9 +140,6 @@ class Etudiant
                     $admin['MDP-etudiant'],
                     $admin['Telephone-etudiant'],
                     $admin['DateNaissance-etudiant'],
-                    $admin['Chemin-CV'],
-                    $admin['Nom-promo'],
-                    $admin['ID-etudiant'],    
 
                 ];
             } else {
@@ -153,18 +151,6 @@ class Etudiant
         }
     }
 
-    public function getAllOffer()
-    {
-        try {
-            $stmt = $this->pdo->prepare('SELECT * FROM offrestage');
-            $stmt->execute();
-            $newjson = json_encode($stmt->fetchAll(PDO::FETCH_ASSOC));
-            return $newjson;
-             
-        } catch (PDOException $e) {
-            return false;
-        }
-    }
 
     public function getOfferById($id)
     {
@@ -427,28 +413,35 @@ class Etudiant
     }
 
     #verifie la correspondance email de log / mdp
-    public function checkLogValidation($data)
-    {
-        if (!$this->checkCharacters($data['email']) || !$this->checkCharacters($data['password'])) {
-            echo 'Caracteres invalides.<br>';
-            return false;
-        }
+    public function checkLogValidation($data) {
+        // Debug: Check the input data
+        echo "Checking log validation for:<br>";
+        echo "Email: " . $data['email'] . "<br>";
+        echo "Password: " . $data['password'] . "<br>";
+    
         try {
+            // Query the database for the user
             $stmt = $this->pdo->prepare('SELECT * FROM etudiant WHERE `Email-etudiant` = :email');
             $stmt->bindParam(':email', $data['email']);
             $stmt->execute();
             $etudiant = $stmt->fetch(PDO::FETCH_ASSOC);
     
+            // Debug: Check the fetched user data
+            echo "<pre>";
+            print_r($etudiant);
+            echo "</pre>";
+    
             // Verify the password
             if ($etudiant && password_verify($data['password'], $etudiant['MDP-etudiant'])) {
-                echo 'Validation.<br>';
+                echo 'Password verification successful.<br>';
                 return true;
             } else {
-                echo 'Email ou mot de passe incorrect.<br>';
+                echo 'Invalid email or password.<br>';
                 return false;
             }
         } catch (PDOException $e) {
-            echo "Erreur : " . $e->getMessage() . "<br>";
+            // Debug: Catch and display any database errors
+            echo "Error: " . $e->getMessage() . "<br>";
             return false;
         }
     }

@@ -41,12 +41,7 @@ $create->addStudent([
     'idpromo' => null,
 ]);
 
-$_SESSION['firstname'] = $session[0];
-$_SESSION['name'] = $session[1];
-$_SESSION['email'] = $session[2];
-$_SESSION['password'] = $session[3];
-$_SESSION['telephone'] = $session[4];
-$_SESSION['date'] = $session[5];
+
 $_SESSION['log'] = 'Etudiant';
 
 // Redirection vers la page d'accueil après l'inscription
