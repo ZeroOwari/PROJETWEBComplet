@@ -21,6 +21,9 @@
         $_SESSION['password'] = $session[3];
         $_SESSION['telephone'] = $session[4];
         $_SESSION['date'] = $session[5];
+        $_SESSION['path'] = $session[6];
+        $_SESSION['promo'] = $session[7];
+        $_SESSION['id'] = $session[8];
         $_SESSION['log'] = 'Etudiant';
 
         echo "Bonjour " . $_SESSION['firstname'] . " " . $_SESSION['name'] . ", vous êtes connecté en tant qu'étudiant."; echo "<br>";

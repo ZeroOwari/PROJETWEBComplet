@@ -19,6 +19,7 @@
         $_SESSION['name'] = $session[1];
         $_SESSION['email'] = $session[2];
         $_SESSION['password'] = $session[3];
+        $_SESSION['id'] = $session[4];
         $_SESSION['log'] = 'Pilote';
 
         echo "Bonjour " . $_SESSION['firstname'] . " " . $_SESSION['name'] . ", vous êtes connecté en tant que pilote.";

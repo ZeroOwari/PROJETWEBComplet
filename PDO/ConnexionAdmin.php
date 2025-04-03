@@ -19,12 +19,13 @@
         $_SESSION['name'] = $session[1];
         $_SESSION['email'] = $session[2];
         $_SESSION['password'] = $session[3];
+        $_SESSION['id'] = $session[4];
         $_SESSION['log'] = 'Admin';
 
         echo "Bonjour " . $_SESSION['firstname'] . " " . $_SESSION['name'] . ", vous êtes connecté en tant qu'administrateur.";
     
         // Redirection vers la page d'accueil
-        header("Location: ../Vue/accueil.html?login=success");
+        header("Location: ../Vue/InfosCompte.php?login=success");
         exit();
     } else {
         // Authentification échouée

@@ -123,7 +123,7 @@ class Etudiant
 
     public function sessionLog($email, $password) {
         try {
-            $stmt = $this->pdo->prepare('SELECT * FROM etudiant WHERE `Email-etudiant` = :email');
+            $stmt = $this->pdo->prepare('SELECT * FROM etudiant JOIN promotion ON promotion.`ID-promo`=etudiant.`ID-promotion-etudiant` WHERE `Email-etudiant` = :email');
             $stmt->bindParam(':email', $email, PDO::PARAM_STR);
             $stmt->execute();
             $admin = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -139,6 +139,9 @@ class Etudiant
                     $admin['MDP-etudiant'],
                     $admin['Telephone-etudiant'],
                     $admin['DateNaissance-etudiant'],
+                    $admin['Chemin-CV'],
+                    $admin['Nom-promo'],
+                    $admin['ID-etudiant'],    
 
                 ];
             } else {

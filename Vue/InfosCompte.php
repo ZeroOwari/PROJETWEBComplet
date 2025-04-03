@@ -1,3 +1,5 @@
+<?php session_start() ;?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -122,7 +124,7 @@
     <div class="account-container">
       <div class="account-avatar">
         <img src="assets/Avatar.png" alt="Avatar">
-        <h3><?php echo $_SESSION['firstname'],$_SESSION['lastname']?></h3>
+        <h3><?php echo $_SESSION['firstname'].' '.$_SESSION['name']?></h3>
       </div>
     <form class="infos-compte" action="InfosCompte.php" method="POST">
         <div class="detail-row">
