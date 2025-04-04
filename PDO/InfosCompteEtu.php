@@ -30,6 +30,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
         'stage' => $stage
     ]);
 
+    $db->updateStudent($_SESSION['id'], [
+        $_SESSION['firstname'],
+        $_SESSION['name'],
+        $_SESSION['mail'],
+        $_SESSION['password'],
+        $_SESSION['telephone'],
+        $_SESSION['date'],
+        $_SESSION['path'],
+        $_SESSION['idpromo'],
+        $_SESSION['stage']
+    ]);
+
     echo "Modifications enregistrées avec succès.";
 }
 
