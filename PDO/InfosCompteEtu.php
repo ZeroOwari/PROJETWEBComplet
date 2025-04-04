@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $db = new Admin('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
     $db->updateStudent($_SESSION['id'], [
         $_SESSION['firstname'] => $_SESSION['firstname'],
-        $_SESSION['lastname'] => $_SESSION['name'],
+        $_SESSION['name'] => $_SESSION['name'],
         $_SESSION['email'] => $email,
         $_SESSION['password'] => $password,
         $_SESSION['telephone'] => $telephone,
