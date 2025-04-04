@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['Date']))
     $_SESSION['Date'] = $_POST['Date'];
 }
 
-$create = new Pilote('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
+$create = new Pilote('mysql:host=localhost;dbname=web4all', 'TOtime', 'Password0508');
 
 $create->addPilote([
     'firstname' => $_SESSION['firstname'],
@@ -41,11 +41,6 @@ $create->addPilote([
     'idpromo' => null,
 ]);
 
-$_SESSION['firstname'] = $session[0];
-$_SESSION['name'] = $session[1];
-$_SESSION['email'] = $session[2];
-$_SESSION['password'] = $session[3];
-$_SESSION['log'] = 'Pilote';
 
 // Redirection vers la page d'accueil après l'inscription
 header("Location: ../Vue/accueil.html?inscription=success");
