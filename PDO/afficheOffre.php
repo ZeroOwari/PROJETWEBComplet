@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nbrOffer']) && $_POST
     $limit = $_POST['nbrOffer']; 
 } 
 else {
-    $limit = 1; 
+    $limit = 3; 
 }
 
 printPagination($limit, $recherche);
