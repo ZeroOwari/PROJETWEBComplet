@@ -2,7 +2,7 @@
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submitEvaluation'])) {
     include("GestionEtu.php");
-    $gestionEtu = new GestionEtu(new PDO('mysql:host=localhost;dbname=web4all', 'root', ''));
+    $gestionEtu = new GestionEtu('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
 
     $nom = $_POST['nom'] ?? null;
     $email = $_POST['email'] ?? null;

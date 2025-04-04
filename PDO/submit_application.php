@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Charger le contenu du JSON
         include("Pilote.php");
-        $company = new Pilote('mysql:host=localhost;dbname=web4all', 'root', '');
+        $company = new Pilote('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
 
         $entreprises = json_decode($company->getAllCompanies());
 

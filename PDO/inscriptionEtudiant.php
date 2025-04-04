@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'&& isset($_POST['Date']))
     $_SESSION['Date'] = $_POST['Date'];
 }
 
-$create = new Etudiant('mysql:host=localhost;dbname=web4all', 'TOtime', 'Password0508');
+$create = new Etudiant('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
 
 $create->addStudent([
     'firstname' => $_SESSION['firstname'],

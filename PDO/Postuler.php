@@ -3,7 +3,7 @@
 include_once(__DIR__ . "/Entreprise.php");
 
 try {
-    $company = new Entreprise(new PDO('mysql:host=localhost;dbname=web4all', 'root', ''));
+    $company = new Entreprise('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
 
     $entreprises = json_decode($company->getAllCompanies());
 
