@@ -15,32 +15,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
     $_SESSION['date'] = $birthdate;
     $_SESSION['promo'] = $promo;
     $_SESSION['path'] = $path;
+    $_SESSION['idpromo'] = $promo;
 
     include("Admin.php");
     $db = new Admin('mysql:host=localhost;dbname=web4all', 'website_user', 'kxHBI-ozJOjvwr_H');
     $db->updateStudent($_SESSION['id'], [
-        'firstname' => $_SESSION['firstname'],
-        'lastname' => $_SESSION['name'],
-        'email' => $email,
-        'password' => $password,
-        'telephone' => $telephone,
-        'date' => $birthdate,
-        'path' => $path, 
-        'idpromo' => $promo,
-        'stage' => $stage
+        $_SESSION['firstname'] => $_SESSION['firstname'],
+        $_SESSION['lastname'] => $_SESSION['name'],
+        $_SESSION['email'] => $email,
+        $_SESSION['password'] => $password,
+        $_SESSION['telephone'] => $telephone,
+        $_SESSION['date'] => $birthdate,
+        $_SESSION['path'] => $path, 
+        $_SESSION['idpromo'] => $promo,
+        $_SESSION['stage'] => $stage
     ]);
 
-    $db->updateStudent($_SESSION['id'], [
-        $_SESSION['firstname'],
-        $_SESSION['name'],
-        $_SESSION['mail'],
-        $_SESSION['password'],
-        $_SESSION['telephone'],
-        $_SESSION['date'],
-        $_SESSION['path'],
-        $_SESSION['idpromo'],
-        $_SESSION['stage']
-    ]);
 
     echo "Modifications enregistrées avec succès.";
 }
